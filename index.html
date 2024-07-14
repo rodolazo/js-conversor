@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Conversor</title>
+</head>
+
+<body>
+    <h1>Conversor de monedas Nacional</h1>
+    <hr>
+    <main class="contenedor">
+        <section class="tarjeta">
+            <h2 class="tarjeta__titulo">Pesos CLP</h2>
+            <input type="text" class="tarjeta__input">
+            <label for="" class="tarjeta__etiqueta">Moneda a convertir: </label>
+            <select name="" id="" class="tarjeta__select">
+                <option value="uf">Unidad de Fomento</option>
+                <option value="ivp">Índice de valor promedio</option>
+                <option value="dolar">Dólar</option>
+                <option value="dolar_intercambio">Dólar intercambio</option>
+                <option value="euro">Euro</option>
+                <option value="ipc">Índice de precios al consumidor</option>
+                <option value="utm">Unidad tributaria mensual</option>
+                <option value="imacec">Imacec</option>
+                <option value="tpm">Tasa Política Monetaria</option>
+                <option value="libra_cobre">Libra de Cobre</option>
+                <option value="tasa_desempleo">Tasa de desempleo</option>
+                <option value="bitcoin">Bitcoin</option>
+            </select>
+            <button class="tarjeta__button">Buscar</button>
+            <div class="tarjeta__resultado"></div>
+        </section>
+        <section class="graph"></section>
+
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
