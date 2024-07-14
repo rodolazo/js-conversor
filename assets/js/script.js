@@ -21,5 +21,7 @@ async function getValues(ruta) {
 //Crear una función para mostrar en pantalla
 async function renderResult(ruta) {
   const myObj = await getValues(ruta);
-  console.log(myObj.serie[0].valor);
+  //console.log(myObj.serie[0].valor);
+  let html = `<p class="tarjeta__result">Resultado: $ ${myObj.serie[0].valor}</p>`;
+  myResult.innerHTML = html;
 }

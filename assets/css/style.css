@@ -56,3 +56,10 @@
   border: 2px solid blue;
   font-size: 18px;
 }
+
+.tarjeta__result {
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+}
