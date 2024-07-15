@@ -1,6 +1,6 @@
 .contenedor {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: black;
@@ -62,4 +62,9 @@
   font-weight: 600;
   color: white;
   text-align: center;
+}
+
+.graph {
+  background-color: white;
+  width: 80%;
 }
