@@ -17,9 +17,13 @@ myButton.addEventListener("click", function () {
 
 //Crear una función para obtener los datos de la API
 async function getValues(ruta) {
-  const res = await fetch(ruta);
-  const objValue = await res.json();
-  return objValue;
+  try {
+    const res = await fetch(ruta);
+    const objValue = await res.json();
+    return objValue;
+  } catch (e) {
+    myResult.innerHTML = `Error en el servidor: ${e.message}`;
+  }
 }
 
 //Crear una función para mostrar en pantalla
@@ -34,27 +38,30 @@ async function renderResult(ruta) {
 //GRAFICA
 //Crear una función para obtener la data para nuestra gráfica
 async function getAndCreateDataToChart(moneda) {
-  //let myQuery = mySelect.value;
   const apiURL = baseURL + moneda;
-  const res = await fetch(apiURL);
-  const conversores = await res.json();
-  const labels = conversores.serie.map((item) => {
-    return item.fecha;
-  });
-  const data = conversores.serie.map((item) => {
-    const magnitud = item.valor;
-    return Number(magnitud);
-  });
+  try {
+    const res = await fetch(apiURL);
+    const conversores = await res.json();
+    const labels = conversores.serie.map((item) => {
+      return item.fecha;
+    });
+    const data = conversores.serie.map((item) => {
+      const magnitud = item.valor;
+      return Number(magnitud);
+    });
 
-  const datasets = [
-    {
-      label: mySelect.value,
-      borderColor: "rgb(255, 99, 132)",
-      data,
-    },
-  ];
+    const datasets = [
+      {
+        label: mySelect.value,
+        borderColor: "rgb(255, 99, 132)",
+        data,
+      },
+    ];
 
-  return { labels, datasets };
+    return { labels, datasets };
+  } catch (e) {
+    alert(e.message);
+  }
 }
 
 //Renderizar gráfica
