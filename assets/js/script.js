@@ -2,6 +2,7 @@ const myInput = document.querySelector(".tarjeta__input");
 const mySelect = document.querySelector(".tarjeta__select");
 const myButton = document.querySelector(".tarjeta__button");
 const myResult = document.querySelector(".tarjeta__resultado");
+const graph = document.querySelector(".graph");
 const baseURL = "https://mindicador.cl/api/";
 let chartInstance = null;
 
@@ -11,6 +12,7 @@ myButton.addEventListener("click", function () {
   const apiURL = baseURL + myQuery;
   console.log(renderResult(apiURL));
   renderGrafica(myQuery);
+  graph.classList.remove("ocultar");
 });
 
 //Crear una función para obtener los datos de la API

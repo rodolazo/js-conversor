@@ -65,6 +65,11 @@
 }
 
 .graph {
+  margin-top: 20px;
   background-color: white;
   width: 80%;
+}
+
+.ocultar {
+  display: none;
 }
